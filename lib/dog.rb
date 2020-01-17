@@ -9,12 +9,12 @@ class Dog
   def initialize(name)
     @name = name
     @@all << self
-    name
+    save
 
   end
 
   def self.all
-    @@all
+    @@all.each
   end
 
   def self.clear_all
@@ -31,8 +31,6 @@ class Dog
   def save
     @@all << self
     # binding.pry
-
-
   end
 
 end
@@ -40,3 +38,5 @@ end
 pluto = Dog.new("Pluto")
 fido = Dog.new("Fido")
 maddy = Dog.new("Maddy")
+
+Dog.all
